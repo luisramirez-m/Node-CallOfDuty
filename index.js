@@ -536,7 +536,7 @@ module.exports = function(config = {}) {
         return new Promise((resolve, reject) => {
             if (platform === "steam") reject("Steam Doesn't exist for MW. Try `battle` instead.");
             if (platform === "battle") reject(`Battlenet friends are not supported. Try a different platform.`);
-            if (platform === "uno") gamertag = _helpers.cleanClientName(gamertag);
+            gamertag = _helpers.cleanClientName(gamertag);
             let lookupType = "gamer";
             if (platform === "uno") lookupType = "id";
             if (platform === "uno" || platform === "acti") platform = this.platforms["uno"];
